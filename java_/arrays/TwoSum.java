@@ -1,4 +1,4 @@
-package java.array;
+package java_.arrays;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,10 +42,24 @@ public class TwoSum {
         for (int i=0; i < n; i++) {
             int complement = target - nums[i];
             if(numsMap.containsKey(complement)) {
-                return new int[]{i, numsMap.get(complement)};
+                return new int[]{numsMap.get(complement),i};
             }
             numsMap.put(nums[i], i);
         }
         return new int[]{};
+    }
+    // write unit tests for above code
+    public static void main(String[] args) {
+        TwoSum twoSum = new TwoSum();
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        int[] result1 = twoSum.twoSum_bruteForce(nums, target);
+        System.out.println(result1[0] + " " + result1[1]);
+
+        int[] result2 = twoSum.twoSum_twoPassHashTable(nums, target);
+        System.out.println(result2[0] + " " + result2[1]);
+
+        int[] result3 = twoSum.twoSum_onePassHashTable(nums, target);
+        System.out.println(result3[0] + " " + result3[1]);
     }
 }

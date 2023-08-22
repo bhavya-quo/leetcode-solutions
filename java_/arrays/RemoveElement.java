@@ -1,4 +1,4 @@
-package java.array;
+package java_.arrays;
 public class RemoveElement {
     // Initial solution - too complicated - ignore
     public int removeElement1(int[] nums, int val) {

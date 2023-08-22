@@ -1,4 +1,4 @@
-package java.array;
+package java_.arrays;
 public class MergeSortedArray {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = m - 1;
@@ -12,5 +12,13 @@ public class MergeSortedArray {
                 nums1[k--] = nums2[j--];
             }
         }
+    }
+    // write unit tests for above code
+    public static void main(String[] args) {
+        MergeSortedArray mergeSortedArray = new MergeSortedArray();
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
+        mergeSortedArray.merge(nums1, 3, nums2, 3);
+        System.out.println(nums1);
     }
 }
